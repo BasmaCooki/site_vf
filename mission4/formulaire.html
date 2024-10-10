@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <style>
+ /* Pour les écrans plus petits, le formulaire s'adapte mieux */
+@media screen and (max-width: 768px) {main {width: 90%;}}
+
+@media screen and (max-width: 480px) {input, select, textarea, button {width: 100%;font-size: 0.9em;}}
+ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 10px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulaire d'inscription</h1>
+    </header>
+
+    <main>
+        <form action="#" method="POST" class="registration-form">
+            <table>
+                <tr>
+                    <td><label for="pseudo">Pseudo* :</label></td>
+                    <td><input type="text" id="pseudo" name="pseudo" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Mot de passe :</label></td>
+                    <input type="password" id="password" name="password" required pattern=".{8,}" title="Le mot de passe doit contenir au moins 8 caractères.">
+
+                </tr>
+                <tr>
+                    <td><label for="prenom">Prenom :</label></td>
+                    <td><input type="text" id="prenom" name="prenom" placeholder="Votre Prenom" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email :</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="avatar">Avatar :</label></td>
+                    <td><input type="file" id="avatar" name="avatar"></td>
+                </tr>
+                <tr>
+                    <td><label for="pays">Pays :</label></td>
+                    <td>
+                        <select id="pays" name="pays">
+                            <option value="espagne">Espagne</option>
+                            <option value="france">France</option>
+                            <option value="italie">Italie</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quel sont vos fruits préférés ? :</td>
+                    <td>
+                        <input type="checkbox" id="orange" name="fruits" value="orange"> <label for="orange">Orange</label>
+                        <hr>
+                        <input type="checkbox" id="fraise" name="fruits" value="fraise"> <label for="fraise">Fraise</label>
+                        <hr>
+                        <input type="checkbox" id="poire" name="fruits" value="poire"> <label for="poire">Poire</label>
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Civilité :</td>
+                    <td>
+                        <input type="radio" id="homme" name="civilite" value="homme" required> <label for="homme">Homme</label>
+                        <hr>
+                        <input type="radio" id="femme" name="civilite" value="femme"> <label for="femme">Femme</label>
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ville">Ville :</label></td>
+                    <td><input type="text" id="ville" name="ville"></td>
+                </tr>
+                <tr>
+                    <td><label for="codePostal">Code Postal :</label></td>
+                    <td><input type="text" id="codePostal" name="codePostal"></td>
+                </tr>
+                <tr>
+                    <td><label for="adresse">Adresse :</label></td>
+                    <td><textarea id="adresse" name="adresse"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="dateNaissance">Date de Naissance :</label></td>
+                    <td><input type="date" id="dateNaissance" name="dateNaissance"></td>
+                </tr>
+                <tr>
+                    <td><label for="jauge">Jauge :</label></td>
+                    <td><input type="range" id="jauge" name="jauge" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td><label for="telephone">Téléphone :</label></td>
+                    <td><input type="tel" id="telephone" name="telephone"></td>
+                </tr>
+                <tr>
+                    <td><label for="recherche">Recherche :</label></td>
+                    <td><input type="search" id="recherche" name="recherche"></td>
+                </tr>
+                <tr>
+                    <td><label for="url">URL :</label></td>
+                    <td><input type="url" id="url" name="url"></td>
+                </tr>
+                <tr>
+                    <td><label for="couleur">Couleur :</label></td>
+                    <td><input type="color" id="couleur" name="couleur"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Valider</button></td>
+                </tr>
+            </table>
+        </form>
+        <a href="index.html">Retour au Sommaire</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Formulaire d'inscription. GUETTOUCHE Basma</p>
+    </footer>
+</body>
+</html>
