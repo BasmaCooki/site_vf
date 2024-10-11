@@ -34,17 +34,11 @@ main {
     margin: 20px;
 }
 
-form {
-    margin-top: 20px;
-}
+form {margin-top: 20px;}
 
-table {
-    width: 100%;
-}
+table {width: 100%;}
 
-td {
-    padding: 10px;
-}
+td {padding: 10px;}
 
 input, select, textarea, button {
     width: 100%;
@@ -62,13 +56,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
-}
+button:hover {background-color: #45a049;}
 
-label {
-    font-weight: bold;
-}
+label {font-weight: bold;}
 
 footer {
     margin-top: 20px;
@@ -80,9 +70,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
+a:hover {text-decoration: underline;}
 
 
     </style>
@@ -91,9 +79,8 @@ a:hover {
     <header>
         <h1>Formulaire d'inscription</h1>
     </header>
-
+    <form action="#" method="POST" class="registration-form"></form>
     <main>
-        <form action="#" method="POST" class="registration-form">
             <table>
                 <tr>
                     <td><label for="pseudo">Pseudo* :</label></td>
@@ -101,8 +88,7 @@ a:hover {
                 </tr>
                 <tr>
                     <td><label for="password">Mot de passe :</label></td>
-                    <input type="password" id="password" name="password" required pattern=".{8,}" title="Le mot de passe doit contenir au moins 8 caractères.">
-
+                    <td><input type="password" id="password" name="password" required pattern=".{8,}" title="Le mot de passe doit contenir au moins 8 caractères."></td>
                 </tr>
                 <tr>
                     <td><label for="prenom">Prenom :</label></td>
@@ -127,7 +113,7 @@ a:hover {
                     </td>
                 </tr>
                 <tr>
-                    <td>Quel sont vos fruits préférés ? :</td>
+                    <td><label fort="Quel sont vos fruits préférés ?">Quel sont vos fruits préférés ?</label>:</td>
                     <td>
                         <input type="checkbox" id="orange" name="fruits" value="orange"> <label for="orange">Orange</label>
                         <hr>
@@ -138,7 +124,7 @@ a:hover {
                     </td>
                 </tr>
                 <tr>
-                    <td>Civilité :</td>
+                    <td><label for="ville">Ville :</label></td>
                     <td>
                         <input type="radio" id="homme" name="civilite" value="homme" required> <label for="homme">Homme</label>
                         <hr>
