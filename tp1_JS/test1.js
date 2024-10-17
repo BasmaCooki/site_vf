@@ -29,7 +29,17 @@ function calcul_moyenne() {
     else {
         document.write("Vous êtes admis");
         document.body.style.backgroundColor="green"; 
-}
+    }
+
+    if (moyenne < 0 || moyenne > 20){
+            document.write("Moyenne invalide");}
+    else if (moyenne <10)
+    {document.write("redoublant");}
+    else if (moyenne <14)
+        {document.write("Admis passable");}
+    else 
+    {document.write("admis bien");}
+
 }
 
 function test_couleur(){
