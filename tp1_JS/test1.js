@@ -28,7 +28,7 @@ function calcul_moyenne() {
     }
     else {
         document.write("Vous êtes admis");
-        document.body.style.backgroundColor="green"; 
+        document.body.style.backgroundColor="green";
     }
 
     if (moyenne < 0 || moyenne > 20){
