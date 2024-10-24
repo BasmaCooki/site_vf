@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang="fr"> <!-- Changement de l'anglais à français pour correspondre au contenu -->
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sommaire</title> <!-- Titre plus descriptif -->
-    <style>
-        body {
-            background-color: lightblue; /* Couleur de fond */
-            font-family: Arial, sans-serif; /* Police de caractères */
-            margin: 20px; /* Marges pour un espacement */
-            text-align: center; /* Centre le texte dans le body */
-        }
-        h1 {color: darkblue; /* Couleur du titre principal */}
-        h2 {margin: 15px 0; /* Espacement vertical pour les sous-titres */}
-        a {
-            text-decoration: none; /* Supprime le soulignement des liens */
-            color: darkblue; /* Couleur des liens */
-            font-weight: bold; /* Met en gras les liens */
-        }
-        a:hover {color: red; /* Changement de couleur au survol */}
-        p {
-            font-size: 18px; /* Taille de la police pour le texte */
-            font-weight: bold; /* Met en gras le texte */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sommaire</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
     <h1>Sommaire</h1>
-    <h2><a href="tp1/index.html">TP1.1</a></h2>
-    <h2><a href="mission1/index.html">Mission 1</a></h2>
-    <h2><a href="tp2/index.html">TP2</a></h2>
-    <h2><a href="mission2/index.html">Mission 2</a></h2>
-    <h2><a href="tp3/index.html">TP3</a></h2>
-    <h2><a href="mission3/index.html">Mission 3</a></h2>
-    <h2><a href="mission4/index.html">Mission 4</a></h2>
-    <h2><a href="tp1_JS/index.html">TP1 JS</a></h2>
-    <h2><a href="tp4/document.html"></a></h2>
+  </header>
+  <div class="container">
+    <div class="column tp">
+      <h2>TP</h2>
+      <ul>
+        <li><a href="tp1/index.html">TP1</a></li>
+        <li><a href="tp2/index.html">TP2</a></li>
+        <li><a href="tp3/index.html">TP3</a></li>
+        <li><a href="tp1_JS/index.html">TP1 JS</a></li>
+        <li><a href="tp4/document.html">TP4</a></li>
+        <li><a href="tp5/document.html">TP5</a></li>
+      </ul>
+    </div>
+    <div class="column missions">
+      <h2>Missions</h2>
+      <ul>
+        <li><a href="mission1/index.html">Mission 1</a></li>
+        <li><a href="mission2/index.html">Mission 2</a></li>
+        <li><a href="mission3/index.html">Mission 3</a></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
     <p>&copy; 2024 - GUETTOUCHE BASMA</p>
+  </footer>
 </body>
+</html>
