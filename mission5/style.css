@@ -1,10 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color:white;
     color: #333;
 }
 
@@ -15,18 +15,17 @@ body {
     padding: 20px;
     border: 5px solid #3388CC;
     border-radius: 10px;
-    box-shadow: 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
 }
 
 .section {
-    background-color: #ffffff;
+    background-color: white;
     border: 2px solid #3388CC;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    overflow: hidden; 
 }
 
 .section h2 {
@@ -37,40 +36,48 @@ body {
     text-align: center;
 }
 
-.left-block, .right-block {
-    flex: 1 1 45%;
+.left-block{
+    align-content: right;
+}
+
+.left-block,
+.right-block {
+    width: 45%;
     background-color: white;
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
     border: 1px solid white;
-    text-align: center;
-    
+    float: left; 
+
 }
 
-.left-block ul, .right-block ul {
+.left-block ul,
+.right-block ul {
     list-style-type: none;
     padding: 0;
 }
 
+
 .right-block img {
     border-radius: 50%;
     border: 2px solid #3388CC;
-    image-orientation: center;
+    display: block;
+    margin: 0 auto;
+    align-content: center;
 }
 
-/* Responsivité */
+
 @media screen and (max-width: 768px) {
     .container {padding: 10px;}
 
-    .section {flex-direction: column; }
-
-    .left-block, .right-block {
-        flex: 1 1 100%;
+    .left-block,
+    .right-block {
+        width: 100%;
+        float: none; 
         margin: 5px 0;
     }
 
-    header h1 {font-size: 20px;}
+    h1 { font-size: 24px; }
 
-    section h2 {font-size: 18px; }}
-
+    .section h2 { font-size: 18px }}
