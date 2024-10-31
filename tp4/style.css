@@ -1,5 +1,3 @@
-
-/* Overall body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +6,6 @@ body {
     color: #fff;
 }
 
-/* Flexbox for the main block container */
 .container {
     display: flex;
     justify-content: space-between;
@@ -17,18 +14,16 @@ body {
     padding: 20px;
 }
 
-/* Shared block styling */
 .block {
     background-color: #5677ed;
-    width: 30%; /* Set width to 30% so three blocks fit well side by side */
+    width: 30%; 
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for style */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-/* Header and footer styling */
 header, footer {
     background-color: rgb(7, 38, 105);
     text-align: center;
@@ -46,7 +41,6 @@ footer a {
     font-weight: bold;
 }
 
-/* Styling for each section title */
 .bordur1 {
     background-color: rgb(8, 32, 92);
     padding: 10px;
@@ -56,21 +50,19 @@ footer a {
     color: #fff;
 }
 
-/* Image inside block */
+
 .block img {
-    width: 100%; /* Make image responsive to the block size */
+    width: 100%; 
     height: auto;
     border-radius: 10px;
 }
 
-/* Improve paragraph text */
 .block p {
     text-align: left;
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Add responsiveness for smaller screens */
 @media (max-width: 1000px) {
     .container {
         flex-direction: column;
@@ -78,7 +70,7 @@ footer a {
     }
     
     .block {
-        width: 90%; /* Full width on smaller screens */
+        width: 90%;
         margin: 15px 0;
     }
 }

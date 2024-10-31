@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 780px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 5px solid #3388CC;
+    border-radius: 10px;
+    box-shadow: 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.section {
+    background-color: #ffffff;
+    border: 2px solid #3388CC;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section h2 {
+    width: 100%;
+    margin-bottom: 15px;
+    color: #3388CC;
+    font-size: 22px;
+    text-align: center;
+}
+
+.left-block, .right-block {
+    flex: 1 1 45%;
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+    text-align: center;
+    
+}
+
+.left-block ul, .right-block ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.right-block img {
+    border-radius: 50%;
+    border: 2px solid #3388CC;
+    image-orientation: center;
+}
+
+/* Responsivité */
+@media screen and (max-width: 768px) {
+    .container {padding: 10px;}
+
+    .section {flex-direction: column; }
+
+    .left-block, .right-block {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+
+    header h1 {font-size: 20px;}
+
+    section h2 {font-size: 18px; }}
