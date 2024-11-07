@@ -60,8 +60,3 @@ else {
     alert("Couleur non comprise")
 }
 }
-
-function permute(){
-    var v3 = "";
-    a=
-}
