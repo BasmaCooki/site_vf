@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul avec Bouton</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="facture.js"></script>
+</head>
+<body>
+
+    <center>
+        <h1>Facture en Javascript</h1>
+        <div>
+            <label>Article 1</label>
+            <input type="text" id="article1">
+            <input type="number" class="p" name="prix1" id="prix1" placeholder="Prix" step="0.01">
+            <input type="number" class="q" name="quantite1" id="quantite1" placeholder="Quantité">
+            <input type="number" class="r" name="resultat1" id="resultat1" placeholder="Résultat" readonly>
+        </div>
+
+        <div>
+            <label>Article 2</label>
+            <input type="text" id="article2">
+            <input type="number" class="p" name="prix2" id="prix2" placeholder="Prix" step="0.01">
+            <input type="number" class="q" name="quantite2" id="quantite2" placeholder="Quantité">
+            <input type="number" class="r" name="resultat2" id="resultat2" placeholder="Résultat" readonly>
+        </div>
+
+        <div>
+            <label>Article 3</label>
+            <input type="text" id="article3">
+            <input type="number" class="p" name="prix3" id="prix3" placeholder="Prix" step="0.01">
+            <input type="number" class="q" name="quantite3" id="quantite3" placeholder="Quantité">
+            <input type="number" class="r" name="resultat3" id="resultat3" placeholder="Résultat" readonly>
+        </div>
+
+        <div>
+            <label>Total</label>
+            <input type="number" class="r" name="total" id="total" placeholder="Total" readonly>
+        </div>
+
+        <button onclick="calculer()">Calculer</button>
+        <a href="facture.html"><button>Réinitialiser</button></a>
+    </center>
+
+</body>
+</html>
+

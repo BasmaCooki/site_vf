@@ -1,0 +1,125 @@
+/* Style de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Mise en page du corps */
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Centre tout le contenu */
+center {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* Titre */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Alignement des lignes */
+div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Espacement du label "Article" */
+label {
+    color: #666;
+    font-weight: bold;
+    margin-right: 10px;
+    min-width: 80px; /* Largeur minimale pour donner plus d'espace au label */
+    text-align: left;
+}
+
+/* Champs de saisie */
+input[type="text"], 
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100px; /* Ajuste la largeur pour un meilleur alignement */
+    text-align: center;
+}
+
+/* Champ de résultat */
+input[type="number"][readonly] {
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style du bouton */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 5px;
+    width: 120px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Style pour le bouton Réinitialiser */
+a button {
+    background-color: #ff5c5c;
+}
+
+a button:hover {
+    background-color: #ff3333;
+}
+
+/* Alignement du champ Total */
+#total {
+    font-weight: bold;
+    background-color: #f9f9f9;
+    width: 100px;
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 768px) {
+    div {
+        flex-direction: column; /* Affiche chaque ligne en colonne */
+        align-items: flex-start;
+    }
+
+    /* Redimensionnement des champs */
+    input[type="text"], 
+    input[type="number"] {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    /* Redimensionne les boutons */
+    button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
