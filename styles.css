@@ -1,63 +1,67 @@
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4; /* Couleur de fond */
-  }
-  
-  header {
-    background-color: #007BFF; /* Couleur de fond du titre */
-    color: white; /* Couleur du texte */
-    padding: 20px; /* Espacement interne */
-    text-align: center; /* Centre le texte */
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour le titre */
-    margin-bottom: 20px; /* Espace en dessous du titre */
-  }
-  
-  .container {
-    display: flex; /* Pour aligner les blocs côte à côte */
-    justify-content: space-between; /* Espace entre les blocs */
-  }
-  
-  .column {
-    background-color: #fff; /* Couleur de fond du bloc */
-    border: 1px solid #ddd; /* Bordure du bloc */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 15px; /* Espacement interne */
-    width: 45%; /* Largeur des blocs */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre du bloc */
-  }
-  
-  h2 {
-    border-bottom: 2px solid #007BFF; /* Ligne sous le titre */
-    color: #007BFF; /* Couleur du titre de section */
-    margin-bottom: 10px; /* Espace sous le titre */
-  }
-  
-  ul {
-    list-style-type: none; /* Enlève les puces de la liste */
-    padding: 0; /* Enlève le padding par défaut */
-  }
-  
-  li {
-    margin: 10px 0; /* Espace entre les éléments de la liste */
-  }
-  
-  a {
-    text-decoration: none; /* Enlève le soulignement des liens */
-    color: #007BFF; /* Couleur des liens */
-    transition: color 0.3s; /* Transition pour l'effet au survol */
-  }
-  
-  a:hover {
-    color: #0056b3; /* Couleur au survol */
-    text-decoration: underline; /* Ajoute un soulignement au survol */
-  }
-  
-  footer {
-    text-align: center; /* Centre le texte du pied de page */
-    margin-top: 20px; /* Espace au-dessus du pied de page */
-    color: #555; /* Couleur du texte du pied de page */
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  margin-top: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #c23616;
+}
+
   
