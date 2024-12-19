@@ -1,73 +1,84 @@
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 20px;
-  background-color: #f4f4f4; 
+  font-family: 'Arial', sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
 }
 
-header {
-  background-color: #007BFF; 
-  color: white; 
-  padding: 20px; 
-  text-align: center; 
-  border-radius: 5px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-  margin-bottom: 20px; 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  text-align: center;
+  background: linear-gradient(to bottom, #0d1117, #161b22),
+      url('https://source.unsplash.com/1600x900/?coding,technology') no-repeat center/cover;
+  color: #58a6ff;
 }
 
-.container {
-  display: flex; 
-  justify-content: space-between; 
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.column {
-  background-color: #fff; 
-  border: 1px solid #ddd; 
-  border-radius: 5px; 
-  padding: 15px; 
-  width: 45%; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #c9d1d9;
 }
 
-h2 {
-  border-bottom: 2px solid #007BFF; 
-  color: #007BFF; 
-  margin-bottom: 10px; 
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-ul {
-  list-style-type: none; 
-  padding: 0; 
+.links a {
+  background: #58a6ff;
+  color: #0d1117;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-li {
-  margin: 10px 0; 
-}
-
-a {
-  text-decoration: none; 
-  color: #007BFF; 
-  transition: color 0.3s; 
-}
-
-a:hover {
-  color: #0056b3; 
-  text-decoration: underline; 
+.links a:hover {
+  transform: translateY(-3px);
+  background: #1f6feb;
 }
 
 footer {
-  text-align: center; 
-  margin-top: 20px; 
-  color: #555; 
+  text-align: center;
+  padding: 1rem;
+  background: #161b22;
+  color: #c9d1d9;
 }
+
+footer a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column; 
-    align-items: center;     
+  .hero h2 {
+      font-size: 2rem;
   }
 
-  .column {
-    width: 90%;   
-    margin-bottom: 20px;    
+  .hero p {
+      font-size: 1rem;
+  }
+
+  .links a {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
   }
 }
