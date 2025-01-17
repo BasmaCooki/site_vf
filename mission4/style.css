@@ -1,77 +1,90 @@
-/* Styles de base pour la carte*/
+/* style.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #1e3c72, #2a5298);
+    color: #ffffff;
+    overflow: hidden;
 }
 
-/* Styles pour le formulaire */
-form {
-    margin: 50px auto;
-    padding: 20px;
-    width: 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-table {
-    width: 100%;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-}
-
-input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Styles pour la carte de visite */
 .carte-visite {
-    margin: 50px auto;
-    padding: 20px;
-    width: 300px;
-    background-color: #fff;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 400px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-visite:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 .carte-visite h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin: 0;
+    color: #ffd700;
+    text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffc107;
 }
 
 .carte-visite h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: gray;
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #a8d0e6;
 }
 
 .carte-visite p {
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 1em;
+    margin: 15px 0;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.liens {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .liens a {
-    margin: 0 5px;
-    color: #007bff;
+    color: #ffffff;
     text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.liens a:hover {text-decoration: underline;}
+.liens a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff8ec4, #98a3f5);
+}
 
-/* Responsive */
-@media (max-width: 600px) {form, .carte-visite {width: 90%;}}
+.liens a:active {
+    transform: scale(0.9);
+}
+
+/* Background animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    animation: gradient 10s ease infinite;
+    background-size: 200% 200%;
+}

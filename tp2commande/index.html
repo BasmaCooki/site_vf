@@ -5,98 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blocs Cliquables</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+        /* Global Styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
 
-        h1 {
-            margin-bottom: 30px;
-            color: #333;
-        }
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0px 0px 10px #ffffff, 0px 0px 20px #ff69b4;
+    margin-bottom: 30px;
+    animation: glow 2s infinite alternate;
+}
 
-        .container {
-            display: flex;
-            gap: 20px;
-        }
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .column {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background-color 0.3s;
-            width: 200px;
-        }
+/* Block Styles */
+.column {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+}
 
-        .column h2 {
-            margin-bottom: 15px;
-        }
+.column::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    transform: scale(1.5);
+    z-index: 0;
+}
 
-        .column ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.column:hover::before {
+    opacity: 1;
+    animation: rotate 3s infinite linear;
+}
 
-        .column ul li {
-            margin: 10px 0;
-        }
+.column:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
 
-        .column ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.column h2 {
+    margin-bottom: 15px;
+    z-index: 1;
+    position: relative;
+    text-shadow: 0px 0px 10px #ffffff;
+}
 
-        .column ul li a:hover {
-            text-decoration: underline;
-        }
+.column ul {
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+}
 
-        .column:hover {
-            transform: scale(1.05);
-            background-color: #0056b3;
-        }
+.column ul li {
+    margin: 10px 0;
+}
 
-        .sql {
-            background-color: #28a745;
-        }
+.column ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
 
-        .sql:hover {
-            background-color: #1e7e34;
-        }
+.column ul li a:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
 
-        .tp {
-            background-color: #ffc107;
-        }
+/* Specific Column Colors */
+.sql {
+    background: linear-gradient(135deg, #28a745, #34d058);
+}
 
-        .tp:hover {
-            background-color: #e0a800;
-        }
+.tp {
+    background: linear-gradient(135deg, #ffc107, #fddb3a);
+}
 
-        footer {
-            margin-top: 20px;
-            text-align: center;
-            color: #555;
-        }
+/* Footer Styles */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2em;
+}
 
-        footer a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #ffffff;
+    transition: color 0.3s, text-shadow 0.3s;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+footer a:hover {
+    color: #ff69b4;
+    text-shadow: 0px 0px 15px #ff69b4, 0px 0px 20px #ff69b4;
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 10px #ff69b4, 0px 0px 20px #ff69b4;
+    }
+    to {
+        text-shadow: 0px 0px 20px #ff69b4, 0px 0px 30px #ff69b4;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
     </style>
 </head>
 <body>
