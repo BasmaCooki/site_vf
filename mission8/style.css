@@ -1,0 +1,142 @@
+/* Style global */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f3e7ff, #d6a4ff);
+    color: #444;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+}
+
+/* Section des exercices */
+#exercices {
+    width: 90%;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Titres et paragraphes */
+#exercices h2 {
+    font-size: 2rem;
+    color: #6a11cb;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.exercise h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.exercise p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Boutons magiques */
+button {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    box-shadow: 0 8px 20px rgba(255, 122, 200, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 10px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    position: relative;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ff758c;
+}
+
+/* Effet immersif */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    z-index: -1;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent);
+    animation: glow 8s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #exercices {
+        width: 95%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
