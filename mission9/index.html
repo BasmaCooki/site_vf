@@ -1,14 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QCM Informatique Avancé</title>
+	<link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    
 </head>
 <body>
+	
+	<form id="qcmForm">
+        <h1>QCM Informatique Avancé</h1>
+    	
+    	<div class="question">
+        	<p>Question 1: Quel algorithme est utilisé par Google pour classer les pages Web dans ses résultats de recherche ?</p>
+        	<input type="radio" id="q1r1" name="q1" value="false"> QuickSort<br>
+        	<input type="radio" id="q1r2" name="q1" value="false"> Dijkstra<br>
+        	<input type="radio" id="q1r3" name="q1" value="true"> PageRank<br>
+        	<input type="radio" id="q1r4" name="q1" value="false"> RankNet<br>
+    	</div>
+
+    	
+    	<div class="question">
+        	<p>Question 2: Quel est le nombre maximal d'adresses IP possibles en IPv4 ?</p>
+        	<input type="radio" id="q2r1" name="q2" value="false"> 1 milliard<br>
+        	<input type="radio" id="q2r2" name="q2" value="true"> 4 294 967 296<br>
+        	<input type="radio" id="q2r3" name="q2" value="false"> 2^32 - 1<br>
+        	<input type="radio" id="q2r4" name="q2" value="false"> 10^12<br>
+    	</div>
+
     
+    	<div class="question">
+        	<p>Question 3: Quel est le plus grand nombre premier jamais découvert à ce jour ?</p>
+        	<input type="radio" id="q3r1" name="q3" value="false"> 2^31 - 1<br>
+        	<input type="radio" id="q3r2" name="q3" value="false"> 2^61 - 1<br>
+        	<input type="radio" id="q3r3" name="q3" value="true"> Un nombre de Mersenne<br>
+        	<input type="radio" id="q3r4" name="q3" value="false"> Une puissance de 10<br>
+    	</div>
+
+    	
+    	<div class="question">
+        	<p>Question 4: Quel langage de programmation a été nommé d’après une comédienne ?</p>
+        	<input type="radio" id="q4r1" name="q4" value="true"> Python<br>
+        	<input type="radio" id="q4r2" name="q4" value="false"> Ruby<br>
+        	<input type="radio" id="q4r3" name="q4" value="false"> Ada<br>
+        	<input type="radio" id="q4r4" name="q4" value="false"> Java<br>
+    	</div>
+
+    	
+    	<div class="question">
+        	<p>Question 5: Quel était le surnom du premier bug informatique documenté ?</p>
+        	<input type="radio" id="q5r1" name="q5" value="true"> La mite<br>
+        	<input type="radio" id="q5r2" name="q5" value="false"> Le cafard<br>
+        	<input type="radio" id="q5r3" name="q5" value="false"> L'araignée<br>
+        	<input type="radio" id="q5r4" name="q5" value="false"> Le relais cassé<br>
+    	</div>
+
+    	
+    	<div class="question">
+        	<p>Question 6: Comment les pirates ont-ils accédé à la centrale nucléaire iranienne de Natanz lors de l'attaque Stuxnet ?</p>
+        	<input type="radio" id="q6r1" name="q6" value="false"> Par un malware sur Internet<br>
+        	<input type="radio" id="q6r2" name="q6" value="true"> Par une clé USB infectée<br>
+        	<input type="radio" id="q6r3" name="q6" value="false"> Par une vulnérabilité dans Windows<br>
+        	<input type="radio" id="q6r4" name="q6" value="false"> Par une attaque réseau Wi-Fi<br>
+    	</div>
+
+    	
+    	<div class="question">
+        	<p>Question 7: Quel système d'exploitation est utilisé par la plupart des supercalculateurs du monde ?</p>
+        	<input type="radio" id="q7r1" name="q7" value="false"> Windows<br>
+        	<input type="radio" id="q7r2" name="q7" value="true"> Linux<br>
+        	<input type="radio" id="q7r3" name="q7" value="false"> FreeBSD<br>
+        	<input type="radio" id="q7r4" name="q7" value="false"> macOS<br>
+    	</div>
+
+
+    	<div class="question">
+        	<p>Question 8: Qu’est-ce qu’une "attaque de l’homme du milieu" (Man-in-the-Middle) ?</p>
+        	<input type="radio" id="q8r1" name="q8" value="true"> Une interception et modification de données entre deux parties<br>
+        	<input type="radio" id="q8r2" name="q8" value="false"> Une attaque visant les mots de passe faibles<br>
+        	<input type="radio" id="q8r3" name="q8" value="false"> Une attaque de déni de service<br>
+        	<input type="radio" id="q8r4" name="q8" value="false"> Une attaque contre des bases de données<br>
+    	</div>
+
+    
+    	<div class="question">
+        	<p>Question 9: Quel était le prix de base du premier disque dur commercialisé par IBM (le IBM 305 RAMAC) ?</p>
+        	<input type="radio" id="q9r1" name="q9" value="false"> 5 000 $<br>
+        	<input type="radio" id="q9r2" name="q9" value="false"> 50 000 $<br>
+        	<input type="radio" id="q9r3" name="q9" value="true"> 50 000 $ par Mo<br>
+        	<input type="radio" id="q9r4" name="q9" value="false"> Gratuit pour les universités<br>
+    	</div>
+
+    	
+    	<div class="question">
+        	<p>Question 10: Pourquoi les adresses MAC (Media Access Control) sont-elles uniques ?</p>
+        	<input type="radio" id="q10r1" name="q10" value="true"> Elles sont assignées par le fabricant des cartes réseau<br>
+        	<input type="radio" id="q10r2" name="q10" value="false"> Elles changent dynamiquement selon l’utilisateur<br>
+        	<input type="radio" id="q10r3" name="q10" value="false"> Elles sont générées aléatoirement par l’ordinateur<br>
+        	<input type="radio" id="q10r4" name="q10" value="false"> Elles dépendent du protocole réseau utilisé<br>
+    	</div>
+
+    	<button type="button" onclick="testqcm()">Correction</button>
+        <button type="button" onclick="ouvrirCorrige()">Corrigé</button>
+        <button type="reset">Effacer</button>
+
+
+        <footer>
+            <h2><a href="../mission.html">Sommaire MISSION</a></h2>
+            <p>&copy; 2025 - GUETTOUCHE BASMA</p>
+        </footer>
+        
+	</form>
+    	
 </body>
 </html>

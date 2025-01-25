@@ -1,0 +1,114 @@
+/* Style global */
+body {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #fce4ec, #f3e5f5); /* Douces teintes roses et violettes */
+    color: #4a148c; /* Violet profond */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Conteneur principal */
+h1 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #880e4f; /* Violet intense */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.instructions {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #6a1b9a; /* Violet plus clair */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Questions et réponses */
+h3 {
+    font-size: 1.8rem;
+    color: #7b1fa2; /* Violet riche */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4e342e; /* Marron doux */
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f3e5f5; /* Fond pastel doux */
+    color: #4a148c; /* Texte violet foncé */
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Effet de survol */
+ul li:hover {
+    background-color: #e1bee7; /* Fond légèrement plus violet */
+    transform: scale(1.03);
+}
+
+/* Réponses correctes */
+.correct {
+    color: #d50000; /* Rouge vif */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Bouton */
+button {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(135deg, #8e24aa, #6a1b9a); /* Dégradé violet */
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa); /* Inverse du dégradé */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body, h1, h3, p, ul, button {
+    animation: fadeIn 1s ease-in-out;
+}
