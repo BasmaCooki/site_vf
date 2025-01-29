@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module de Facturation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Facture</h1>
+        <table id="facture">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row">
+                    <td><input type="text" name="desc" class="input desc" value="desc1"></td>
+                    <td><input type="text" name="qte" class="input qte" value="0"></td>
+                    <td><input type="text" name="prix" class="input prix" value="0"></td>
+                    <td><input type="text" name="total" class="input total" readonly value="0.00"></td>
+                </tr>
+                <tr class="row lastrow">
+                    <td><input type="text" name="desc" class="input desc" value="desc2"></td>
+                    <td><input type="text" name="qte" class="input qte" value="0"></td>
+                    <td><input type="text" name="prix" class="input prix" value="0"></td>
+                    <td><input type="text" name="total" class="input total" readonly value="0.00"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="ajouterLigne()">Ajouter une ligne</button>
+        <button onclick="calculer()">Calculer</button>
+        <p>Total Facture: <span id="totalFacture">0</span> €</p>
+    </div>
+ 
+</body>
+</html>
