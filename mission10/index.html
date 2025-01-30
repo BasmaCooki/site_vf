@@ -3,42 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module de Facturation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Facturation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2d6973;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.gauche, .droite {
+    width: 40%;
+}
+
+.droite p {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Sections d'adresse */
+.address-section, .envoyer {
+    background: #e3f2f5;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Tableau de facturation */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #2d6973;
+    color: white;
+}
+
+/* Totaux */
+.totals {
+    background: #e3f2f5;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.totals p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Boutons */
+button {
+    background: #2d6973;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: #235960;
+}
+    </style>
 
 </head>
 <body>
 
+    <header>
+        <div class="gauche">
+            <label><b>Nom de compagnie</b></label>
+            <input type="text" placeholder="Nom de la compagnie"><br>
+
+            <label><b>Adresse postale</b></label>
+            <input type="text" placeholder="Adresse postale"><br>
+
+            <label><b>Détails du contrat</b></label>
+            <input type="text" placeholder="Détails du contrat"><br>
+        </div>
+
+        <div class="droite">
+            <p>FACTURE</p><br>
+            <input type="text" placeholder="DATE"><br>
+            <input type="text" placeholder="N° de facture"><br>
+        </div>
+
+
+    </header>
+
+
+
     <div class="container">
+        <div class="address-section" widht="45%">
+            <p>Destinateur</p><br>
+            <label><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Nom d'utilisateur"><br>
+
+            <label><b>Nom</b></label>
+            <input type="text" placeholder="Nom"><br>
+
+            <label><b>Nom de la société</b></label>
+            <input type="text" placeholder="Nom de la société"><br>
+
+            <label><b>Adresse postale</b></label>
+            <input type="number" placeholder="Adresse postale"><br>
+            
+            <label><b>Téléphone</b></label>
+            <input type="number" placeholder="Téléphone"><br>
+
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Email"><br>
+        </div>
+        <div class="envoyer" widht="45%">
+                <p>Envoyer à</p>
+                <label><b>Nom d'utilisateur</b></label>
+                <input type="text" placeholder="Nom d'utilisateur"><br>
+
+                <label><b>Nom</b></label>
+                <input type="text" placeholder="Nom"><br>
+
+                <label><b>Nom de la société</b></label>
+                <input type="text" placeholder="Nom de la société"><br>
+
+                <label><b>Adresse postale</b></label>
+                <input type="number" placeholder="Adresse postale"><br>
+                
+                <label><b>Téléphone</b></label>
+                <input type="number" placeholder="Téléphone"><br>
+
+                <label><b>Email</b></label>
+                <input type="text" placeholder="Email"><br>
+        </div>
+        
         <h1>Facture</h1>
         <table id="facture">
             <thead>
                 <tr>
                     <th>Description</th>
                     <th>Quantité</th>
-                    <th>Prix Unitaire</th>
-                    <th>Total</th>
+                    <th>Prix Unitaire (€)</th>
+                    <th>Total (€)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="row">
-                    <td><input type="text" name="desc" class="input desc" value="desc1"></td>
-                    <td><input type="text" name="qte" class="input qte" value="0"></td>
-                    <td><input type="text" name="prix" class="input prix" value="0"></td>
-                    <td><input type="text" name="total" class="input total" readonly value="0.00"></td>
-                </tr>
-                <tr class="row lastrow">
-                    <td><input type="text" name="desc" class="input desc" value="desc2"></td>
-                    <td><input type="text" name="qte" class="input qte" value="0"></td>
-                    <td><input type="text" name="prix" class="input prix" value="0"></td>
-                    <td><input type="text" name="total" class="input total" readonly value="0.00"></td>
+                    <td><input type="text" class="desc"></td>
+                    <td><input type="number" class="qte" value="1"></td>
+                    <td><input type="number" class="prix" value="0"></td>
+                    <td><input type="text" class="total" readonly></td>
                 </tr>
             </tbody>
         </table>
+        
+        <div class="totals">
+            <p>SOUS-TOTAL: <span id="sousTotal">0.00 €</span></p>
+            <p>REMISE: <span id="remise">0.00 €</span></p>
+            <p>SOUS-TOTAL MOINS LES REMISES: <span id="totalApresRemise">0.00 €</span></p>
+            <p>TAUX D'IMPOSITION: <span id="tauxImposition">20%</span></p>
+            <p>TAXE TOTALE: <span id="taxeTotal">0.00 €</span></p>
+            <p>EXPÉDITION, MANUTENTION: <span id="expedition">5.00 €</span></p>
+            <p>SOLDE DU: <span id="totalFacture">5.00 €</span></p>
+        </div>
+
+
+        
         <button onclick="ajouterLigne()">Ajouter une ligne</button>
+        <button onclick="supprimerLigne()">Supprimer la dernière ligne</button>
         <button onclick="calculer()">Calculer</button>
-        <p>Total Facture: <span id="totalFacture">0</span> €</p>
+        <button onclick="reinitialiser()">Réinitialiser</button>
+        <p>Total Facture: <span id="totalFacture">0.00</span> €</p>
     </div>
- 
+
+    <script>
+        function ajouterLigne() {
+            let table = document.querySelector("#facture tbody");
+            let newRow = document.querySelector(".row").cloneNode(true);
+            newRow.querySelectorAll("input").forEach(input => input.value = "");
+            table.appendChild(newRow);
+        }
+
+        function supprimerLigne() {
+            let table = document.querySelector("#facture tbody");
+            if (table.rows.length > 1) {
+                table.deleteRow(table.rows.length - 1);
+            }
+        }
+
+        function reinitialiser() {
+            document.querySelectorAll(".row").forEach(row => {
+                row.querySelector(".desc").value = "";
+                row.querySelector(".qte").value = "1";
+                row.querySelector(".prix").value = "0";
+                row.querySelector(".total").value = "0.00";
+            });
+            document.getElementById("totalFacture").textContent = "0.00";
+        }
+
+        function calculer() {
+    let totalFacture = 0;
+    document.querySelectorAll(".row").forEach(row => {
+        let qte = parseFloat(row.querySelector(".qte").value) || 0;
+        let prix = parseFloat(row.querySelector(".prix").value) || 0;
+        let total = qte * prix;
+        row.querySelector(".total").value = total.toFixed(2);
+        totalFacture += total;
+    });
+
+    let remise = totalFacture * 0.1; // Exemple : 10% de réduction
+    let totalApresRemise = totalFacture - remise;
+    let tauxImposition = 20; // TVA de 20%
+    let taxeTotal = totalApresRemise * (tauxImposition / 100);
+    let expedition = 5; // Frais fixes d’expédition
+    let solde = totalApresRemise + taxeTotal + expedition;
+
+    document.getElementById("sousTotal").textContent = totalFacture.toFixed(2) + " €";
+    document.getElementById("remise").textContent = remise.toFixed(2) + " €";
+    document.getElementById("totalApresRemise").textContent = totalApresRemise.toFixed(2) + " €";
+    document.getElementById("tauxImposition").textContent = tauxImposition + "%";
+    document.getElementById("taxeTotal").textContent = taxeTotal.toFixed(2) + " €";
+    document.getElementById("expedition").textContent = expedition.toFixed(2) + " €";
+    document.getElementById("solde").textContent = solde.toFixed(2) + " €";
+    document.getElementById("totalFacture").textContent = solde.toFixed(2) + " €";
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateTotal() {
+        let totalFacture = 0;
+        document.querySelectorAll("table tbody tr").forEach(row => {
+            let quantite = parseFloat(row.querySelector(".qte").value) || 0;
+            let prix = parseFloat(row.querySelector(".prix").value) || 0;
+            let totalCell = row.querySelector(".total");
+            let total = quantite * prix;
+            totalCell.value = total.toFixed(2);
+            totalFacture += total;
+        });
+        document.getElementById("totalFacture").textContent = totalFacture.toFixed(2) + " €";
+    }
+
+    document.querySelectorAll(".qte, .prix").forEach(input => {
+        input.addEventListener("input", updateTotal);
+    });
+
+    updateTotal();
+});
+
+
+    </script>
 </body>
 </html>
