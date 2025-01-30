@@ -4,116 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facturation</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-/* Styles généraux */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
-.container {
-    width: 80%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* En-tête */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #2d6973;
-    color: white;
-    padding: 15px;
-    border-radius: 10px 10px 0 0;
-}
-
-.gauche, .droite {
-    width: 40%;
-}
-
-.droite p {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: right;
-}
-
-/* Sections d'adresse */
-.address-section, .envoyer {
-    background: #e3f2f5;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    width: 40%;
-    display: inline-block;
-    vertical-align: top;
-}
-
-
-input[type="text"], input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Tableau de facturation */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background: #2d6973;
-    color: white;
-}
-
-/* Totaux */
-.totals {
-    background: #e3f2f5;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-.totals p {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Boutons */
-button {
-    background: #2d6973;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button:hover {
-    background: #235960;
-}
-    </style>
 
 </head>
 <body>
-
+    <div class="missionfacture">
     <header>
         <div class="gauche">
             <label><b>Nom de compagnie</b></label>
@@ -127,18 +24,14 @@ button:hover {
         </div>
 
         <div class="droite">
-            <p>FACTURE</p><br>
+            <h5>FACTURE</b></h5>
             <input type="text" placeholder="DATE"><br>
             <input type="text" placeholder="N° de facture"><br>
         </div>
-
-
     </header>
 
-
-
     <div class="container">
-        <div class="address-section" widht="45%">
+        <div class="address-section">
             <p>Destinateur</p><br>
             <label><b>Nom d'utilisateur</b></label>
             <input type="text" placeholder="Nom d'utilisateur"><br>
@@ -179,7 +72,7 @@ button:hover {
                 <input type="text" placeholder="Email"><br>
         </div>
         
-        <h1>Facture</h1>
+
         <table id="facture">
             <thead>
                 <tr>
@@ -191,10 +84,10 @@ button:hover {
             </thead>
             <tbody>
                 <tr class="row">
-                    <td><input type="text" class="desc"></td>
-                    <td><input type="number" class="qte" value="1"></td>
-                    <td><input type="number" class="prix" value="0"></td>
-                    <td><input type="text" class="total" readonly></td>
+                    <td><input type="text" class="desc" placeholder="Description"></td>
+                    <td><input type="number" class="qte" placeholder="Quantité"></td>
+                    <td><input type="number" class="prix" placeholder="Prix unitaire"></td>
+                    <td><input type="number" class="totalLigne" placeholder="Total" disabled></td>
                 </tr>
             </tbody>
         </table>
@@ -210,90 +103,21 @@ button:hover {
         </div>
 
 
-        
+        <div class="buttons-container">
         <button onclick="ajouterLigne()">Ajouter une ligne</button>
         <button onclick="supprimerLigne()">Supprimer la dernière ligne</button>
+        <button onclick="remplir()">Remplir automatiquement</button>
         <button onclick="calculer()">Calculer</button>
         <button onclick="reinitialiser()">Réinitialiser</button>
-        <p>Total Facture: <span id="totalFacture">0.00</span> €</p>
+        <button onclick="telechargerFacture()">Télécharger Facture</button>
+        </div>
+
+        <footer>
+            <h2><a href="../mission.html">Sommaire MISSION</a></h2>
+            <p>&copy; 2025 - GUETTOUCHE BASMA</p>
+        </footer>
+    </div>
     </div>
 
-    <script>
-        function ajouterLigne() {
-            let table = document.querySelector("#facture tbody");
-            let newRow = document.querySelector(".row").cloneNode(true);
-            newRow.querySelectorAll("input").forEach(input => input.value = "");
-            table.appendChild(newRow);
-        }
-
-        function supprimerLigne() {
-            let table = document.querySelector("#facture tbody");
-            if (table.rows.length > 1) {
-                table.deleteRow(table.rows.length - 1);
-            }
-        }
-
-        function reinitialiser() {
-            document.querySelectorAll(".row").forEach(row => {
-                row.querySelector(".desc").value = "";
-                row.querySelector(".qte").value = "1";
-                row.querySelector(".prix").value = "0";
-                row.querySelector(".total").value = "0.00";
-            });
-            document.getElementById("totalFacture").textContent = "0.00";
-        }
-
-        function calculer() {
-    let totalFacture = 0;
-    document.querySelectorAll(".row").forEach(row => {
-        let qte = parseFloat(row.querySelector(".qte").value) || 0;
-        let prix = parseFloat(row.querySelector(".prix").value) || 0;
-        let total = qte * prix;
-        row.querySelector(".total").value = total.toFixed(2);
-        totalFacture += total;
-    });
-
-    let remise = totalFacture * 0.1; // Exemple : 10% de réduction
-    let totalApresRemise = totalFacture - remise;
-    let tauxImposition = 20; // TVA de 20%
-    let taxeTotal = totalApresRemise * (tauxImposition / 100);
-    let expedition = 5; // Frais fixes d’expédition
-    let solde = totalApresRemise + taxeTotal + expedition;
-
-    document.getElementById("sousTotal").textContent = totalFacture.toFixed(2) + " €";
-    document.getElementById("remise").textContent = remise.toFixed(2) + " €";
-    document.getElementById("totalApresRemise").textContent = totalApresRemise.toFixed(2) + " €";
-    document.getElementById("tauxImposition").textContent = tauxImposition + "%";
-    document.getElementById("taxeTotal").textContent = taxeTotal.toFixed(2) + " €";
-    document.getElementById("expedition").textContent = expedition.toFixed(2) + " €";
-    document.getElementById("solde").textContent = solde.toFixed(2) + " €";
-    document.getElementById("totalFacture").textContent = solde.toFixed(2) + " €";
-}
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    function updateTotal() {
-        let totalFacture = 0;
-        document.querySelectorAll("table tbody tr").forEach(row => {
-            let quantite = parseFloat(row.querySelector(".qte").value) || 0;
-            let prix = parseFloat(row.querySelector(".prix").value) || 0;
-            let totalCell = row.querySelector(".total");
-            let total = quantite * prix;
-            totalCell.value = total.toFixed(2);
-            totalFacture += total;
-        });
-        document.getElementById("totalFacture").textContent = totalFacture.toFixed(2) + " €";
-    }
-
-    document.querySelectorAll(".qte, .prix").forEach(input => {
-        input.addEventListener("input", updateTotal);
-    });
-
-    updateTotal();
-});
-
-
-    </script>
 </body>
 </html>
