@@ -91,21 +91,18 @@ function calculer() {
     var listeTtl = document.getElementsByClassName("totalLigne");
 
     let sousTotal = 0;
-    let remise = 0;
-    let totalApresRemise = 0;
-    let taxeTotale = 0;
-    let solde = 0;
-
-    const tauxRemise = 10; 
+    const tauxRemise = parseFloat(document.getElementById('remise').value) || 0;
     const tauxImposition = 20; 
-    const fraisExpedition = 5; 
+    const fraisExpedition = 5;
 
-    for (let i = 0; i < listePrix.length; i++) {
-        const qte = parseFloat(listeQte[i].value) || 0;
-        const prix = parseFloat(listePrix[i].value) || 0;
+    let index = 0;
+    while (index < listePrix.length) {
+        const qte = parseFloat(listeQte[index].value) || 0;
+        const prix = parseFloat(listePrix[index].value) || 0;
         const totalLigne = qte * prix;
-        listeTtl[i].value = totalLigne.toFixed(2); 
-        sousTotal += totalLigne; 
+        listeTtl[index].value = totalLigne.toFixed(2);
+        sousTotal += totalLigne;
+        index++;
     }
 
     remise = sousTotal * (tauxRemise / 100);
