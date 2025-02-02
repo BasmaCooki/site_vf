@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -155,6 +154,12 @@ footer {
     width: 100%;
 }
 
+.hidden-image {
+    display: none;
+}
+
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     .missionfacture {
@@ -172,5 +177,52 @@ footer {
 
     button {
         width: 100%;
+    }
+}
+
+/* Styles spécifiques à l'impression */
+@media print {
+    body {
+        background-color: #fff; /* Assurez-vous que le fond est blanc pour l'impression */
+        margin: 0;
+        padding: 0;
+        display: block; /* Changez la disposition pour l'impression */
+        
+    }
+
+    .missionfacture {
+        width: 100%;
+        max-width: none;
+        background: #fff;
+        padding: 20px;
+        border-radius: 0; /* Supprimez les coins arrondis pour l'impression */
+        box-shadow: none; /* Supprimez les ombres pour l'impression */
+    }
+
+    header, .container, .address-section, .envoyer, .totals, footer {
+        background: #fff;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    table {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    button {
+        display: none; /* Masquez les boutons lors de l'impression */
+    }
+
+    /* Ajoutez d'autres ajustements spécifiques à l'impression si nécessaire */
+}
+.hidden-image {
+    display: none;
+}
+
+/* Afficher l'image lors de l'impression */
+@media print {
+    .hidden-image {
+        display: block;
     }
 }
