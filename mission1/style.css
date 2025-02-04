@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+p {
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+/* Séparateur */
+hr {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* Image */
+img {
+    max-width: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Carte Google Maps */
+iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Lien */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff7e5f;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+a:hover {
+    background: #ff6b5f;
+    transform: scale(1.1);
+}
+
+/* Animation légère */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+h1, p, img, iframe, a {
+    animation: floating 5s infinite ease-in-out;
+}
