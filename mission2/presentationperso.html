@@ -5,39 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h1 {color: darkblue;}
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
-        }
-        label {font-weight: bold;}
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 15px;
-            margin-right: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: darkblue;
-            color: white;
-            cursor: pointer;
-        }
-        button[type="reset"] {background-color: grey;}
-        button:hover {opacity: 0.9;}
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Formulaire */
+form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Boutons */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+button[type="submit"] {
+    background: #ff758c;
+}
+
+button[type="submit"]:hover {
+    background: #ff5370;
+    transform: scale(1.1);
+}
+
+button[type="reset"] {
+    background: #6a11cb;
+}
+
+button[type="reset"]:hover {
+    background: #3a47d5;
+    transform: scale(1.1);
+}
+
     </style>
 </head>
 <body>
@@ -58,5 +112,11 @@
         <button type="submit">Soumettre</button>
         <button type="reset">Réinitialiser</button>
     </form> 
+
+    <footer>
+        <h2><a href="index.html">Sommaire TP</a></h2>
+        <p>&copy; 2024 - GUETTOUCHE BASMA</p>
+    </footer>
+
 </body>
 </html>
