@@ -1,123 +1,126 @@
+/* Fond féérique avec un dégradé pastel */
 body {
-    background-color: grey;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
+
+/* Style du titre */
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #ff69b4, 0px 0px 20px #ff69b4;
+    animation: glow 2s infinite alternate;
+    margin-bottom: 20px;
+}
+
+/* Conteneur des boutons */
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Boutons magiques */
 button {
     width: 250px;
     height: 200px;
-    background-color: black;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
     color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
     border-radius: 26px;
-    font-size: 2em;
-    margin: 30px;
-    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-button:hover {/* style.css */
-    body {
-        font-family: 'Comic Sans MS', cursive, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        overflow: hidden;
-    }
-    
-    h1 {
-        font-size: 2.5em;
-        color: #ffffff;
+/* Effet au survol */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Effet lumineux au clic */
+button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+button:hover::before {
+    opacity: 1;
+    animation: rotate 2s infinite linear;
+}
+
+/* Sommaire */
+h2 a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h2 a:hover {
+    color: #ff69b4;
+    text-shadow: 0px 0px 10px #ff69b4, 0px 0px 15px #ff69b4;
+}
+
+/* Pied de page */
+p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 0px 0px 5px #fbc2eb;
+}
+
+/* Animation de brillance */
+@keyframes glow {
+    from {
         text-shadow: 0px 0px 10px #ff69b4, 0px 0px 20px #ff69b4;
-        animation: glow 2s infinite alternate;
-        margin-bottom: 20px;
     }
-    
-    h2 {
-        margin-top: 20px;
-        font-size: 1.5em;
-        color: #ffffff;
-        text-shadow: 0px 0px 5px #a6c1ee;
+    to {
+        text-shadow: 0px 0px 20px #ff69b4, 0px 0px 30px #ff69b4;
     }
-    
-    a {
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: bold;
-        transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Animation de rotation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
     }
-    
-    a:hover {
-        color: #ff69b4;
-        text-shadow: 0px 0px 10px #ff69b4, 0px 0px 15px #ff69b4;
+    to {
+        transform: rotate(360deg);
     }
-    
-    button {
-        background: linear-gradient(45deg, #ff6ec4, #7873f5);
-        color: #ffffff;
-        font-size: 1.2em;
-        font-weight: bold;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        margin: 10px;
-        cursor: pointer;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    button:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    button::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 60%);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-    
-    button:hover::before {
-        opacity: 1;
-        animation: rotate 2s infinite linear;
-    }
-    
-    p {
-        margin-top: 20px;
-        font-size: 1.2em;
-        color: #ffffff;
-        text-shadow: 0px 0px 5px #fbc2eb;
-    }
-    
-    @keyframes glow {
-        from {
-            text-shadow: 0px 0px 10px #ff69b4, 0px 0px 20px #ff69b4;
-        }
-        to {
-            text-shadow: 0px 0px 20px #ff69b4, 0px 0px 30px #ff69b4;
-        }
-    }
-    
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-    
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    transition: 1500ms;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
 }
