@@ -1,0 +1,75 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #c471ed, #f64f59);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Tableau */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+thead {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+td, th {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Images */
+img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+/* Lien de retour */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff6f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+a:hover {
+    background: #ff4b47;
+    transform: scale(1.1);
+}
