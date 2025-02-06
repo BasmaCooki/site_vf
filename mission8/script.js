@@ -33,7 +33,7 @@ function president() {
 }
 
 function demonstrationPresident() {
-    alert("Les deux choix sont correct");
+    alert("Les deux choix sont correct : function president(){let reponse = prompt()}");
 }
 
 

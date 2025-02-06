@@ -1,0 +1,78 @@
+/* Fond vidéo plein écran */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Centrer le bouton */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Bouton GAME START - design gaming/mignon */
+.game-button {
+    font-size: 3.5rem;  /* Texte plus gros */
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 60px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, rgba(173,216,230,1) 0%, rgba(240,248,255,1) 100%);
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(173,216,230, 0.8);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Effet de lumière céleste */
+.game-button::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Animation hover pour effet gaming */
+.game-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(173,216,230, 1);
+}
+
+.game-button:hover::before {
+    opacity: 1;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Animation d'éclat céleste */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(173,216,230, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(173,216,230, 1);
+    }
+}
