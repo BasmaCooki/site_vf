@@ -9,18 +9,20 @@ function toggleCode(id) {
 
 
 
-function moyenne() {
-    let a = parseFloat(prompt("Entrez l'âge de la première personne :"));
-    let b = parseFloat(prompt("Entrez l'âge de la deuxième personne :"));
-    let c = parseFloat(prompt("Entrez l'âge de la troisième personne :"));
-    alert(`La moyenne d'âge est : ${(a + b + c) / 3}`);
+function moyenne() { 
+    let age1 = parseInt(prompt("Entrez l'âge de la première personne :"));
+    let age2 = parseInt(prompt("Entrez l'âge de la deuxième personne :"));
+    let age3 = parseInt(prompt("Entrez l'âge de la troisième personne :"));
+    let resultat = (age1 + age2 + age3) / 3;
+    alert("La moyenne d'âge est : " + resultat);
 }
 
 
 function puissance() {
-    let base = parseFloat(prompt("Entrez un nombre :"));
-    let exposant = parseInt(prompt("Entrez la puissance :"));
-    alert(`Résultat : ${Math.pow(base, exposant)}`);
+    let base = parseInt(prompt("Entrez la base :"));
+    let exposant = parseInt(prompt("Entrez l'exposant :"));
+    let resultat = Math.pow(base, exposant);
+    alert("Le résultat est : " + resultat);
 }
 
 
@@ -37,19 +39,34 @@ function president() {
 
 
 function plusGrand() {
-    alert(`Le plus grand nombre est : ${Math.max(0.01, 0.1)}`);
+    let reponse = prompt("Nombre le plus grand").toLowerCase(); 
+    if (reponse === "0,1") {
+        alert("Bonne réponse");
+    } else if (reponse === "0,01") {
+        alert("Mauvaise réponse");
+    } else {
+        alert("Réponse invalide. Merci de répondre par '0,1' ou '0,01'");
+    }
 }
 
 
 function pair() {
-    let nombre = parseInt(prompt("Entrez un nombre :"));
-    alert(nombre % 2 === 0 ? "Le nombre est pair." : "Le nombre est impair.");
+    let nombre = parseInt(prompt("Entrez un nombre:"));
+    if (nombre % 2 === 0) {
+        alert("Le nombre est pair.");
+    } else {
+        alert("Le nombre est impair.");
+    }
 }
 
 
 function multipleDe6() {
-    let nombre = parseInt(prompt("Entrez un nombre :"));
-    alert(nombre % 6 === 0 ? "Le nombre est un multiple de 6." : "Non.");
+    let nombre = parseInt(prompt("Entrez un nombre:"));
+    if (nombre % 6 === 0) {
+        alert("Le nombre est divisible par 6");
+    } else {
+        alert("Le nombre n'est pas divisible par 6");
+    }
 }
 
 
@@ -61,7 +78,12 @@ function sommeChiffres() {
 
 
 function activiteTrump() {
-    alert("Donald Trump est connu pour l'immobilier et les affaires.");
+    let reponse = prompt("Quelle activité a fait la fortune de Donald Trump entre l'immobilier et le pétrole ? ").toLowerCase(); 
+    if (reponse === "immobilier") {
+        alert("Bonne réponse ");
+    } else if (reponse === "") {
+        alert("Mauvaise réponse ");
+    }
 }
 
 
@@ -84,31 +106,45 @@ function sommeNombresPairs() {
 
 
 function serie() {
-    alert("La réponse est : 22 (car la suite suit le modèle +2, +3, +4, etc.)");
+    let reponse = prompt("Choisir la suite des chiffres").toLowerCase(); 
+    if (reponse === "22") {
+        alert("Bonne réponse");
+    } else {
+        alert("Mauvaise réponse");
+    }
 }
 
 
 function celsiusToFahrenheit() {
     let celsius = parseFloat(prompt("Entrez la température en Celsius :"));
-    let fahrenheit = (celsius * 9/5) + 32;
-    alert(`${celsius}°C = ${fahrenheit}°F`);
+    let fahrenheit = celsius * 9 / 5 + 32;
+    alert(celsius + "°C = " + fahrenheit + "°F");
 }
 
 
 function aireRectangle() {
-    let largeur = parseFloat(prompt("Entrez la largeur :"));
-    let hauteur = parseFloat(prompt("Entrez la hauteur :"));
-    alert(`L'aire du rectangle est : ${largeur * hauteur}`);
+    let longueur = parseFloat(prompt("Entrez la longueur du rectangle :"));
+    let largeur = parseFloat(prompt("Entrez la largeur du rectangle :"));
+    let aire = longueur * largeur;
+    alert("L'aire du rectangle est : " + aire);
 }
 
 
 function estMajuscule() {
     let mot = prompt("Entrez un mot :");
-    alert(mot === mot.toUpperCase() ? "Le mot est en majuscules." : "Le mot n'est pas entièrement en majuscules.");
+    if (mot === mot.toUpperCase()) {
+        alert("Le mot est en majuscules.");
+    } else {
+        alert("Le mot n'est pas en majuscules.");
+    }
 }
 
 
 function estMajeur() {
-    let age = parseInt(prompt("Entrez votre âge :"));
-    alert(age >= 18 ? "Vous êtes majeur." : "Vous êtes mineur.");
+    let age = parseInt(prompt("Entrez l'âge de l'utilisateur :"));
+    if (age >= 18) {
+        alert("L'utilisateur est majeur.");
+    } else {
+        alert("L'utilisateur n'est pas majeur.");
+    }
 }
