@@ -22,7 +22,7 @@
             <p>Écrire une fonction qui calcule la moyenne d'âge de trois personnes.</p>
             <button onclick="moyenne()">Voir la solution</button>
             <button onclick="toggleCode('code1')">Afficher le code</button>
-            <pre id="code1" class="code-block">
+            <pre id="code1" class="code-block" style="display: none;">
 function moyenne() {
     let a = parseFloat(prompt("Entrez l'âge de la première personne :"));
     let b = parseFloat(prompt("Entrez l'âge de la deuxième personne :"));
@@ -31,11 +31,12 @@ function moyenne() {
 }
             </pre>
 
+
             <h3>2. Puissance d'un nombre</h3>
             <p>Écrire une fonction qui calcule la puissance d'un nombre.</p>
             <button onclick="puissance()">Voir la solution</button>
             <button onclick="toggleCode('code2')">Afficher le code</button>
-            <pre id="code2" class="code-block">
+            <pre id="code2" class="code-block" style="display: none;">
 function puissance() {
     let base = parseFloat(prompt("Entrez un nombre :"));
     let exposant = parseInt(prompt("Entrez la puissance :"));
@@ -47,7 +48,7 @@ function puissance() {
             <p>Le Président de la République fait-il bien son travail ?</p>
             <button onclick="president()">Voir la solution</button>
             <button onclick="toggleCode('code3')">Afficher le code</button>
-            <pre id="code3" class="code-block">
+            <pre id="code3" class="code-block" style="display: none;">
 function president() {
     alert("Ceci est une question d'opinion.");
 }
@@ -57,7 +58,7 @@ function president() {
             <p>Déterminer le plus grand entre 0,01 et 0,1.</p>
             <button onclick="plusGrand()">Voir la solution</button>
             <button onclick="toggleCode('code4')">Afficher le code</button>
-            <pre id="code4" class="code-block">
+            <pre id="code4" class="code-block" style="display: none;">
 function plusGrand() {
     alert(`Le plus grand nombre est : ${Math.max(0.01, 0.1)}`);
 }
@@ -67,7 +68,7 @@ function plusGrand() {
             <p>Déterminer si un nombre donné est pair.</p>
             <button onclick="pair()">Voir la solution</button>
             <button onclick="toggleCode('code5')">Afficher le code</button>
-            <pre id="code5" class="code-block">
+            <pre id="code5" class="code-block" style="display: none;">
 function pair() {
     let nombre = parseInt(prompt("Entrez un nombre :"));
     alert(nombre % 2 === 0 ? "Le nombre est pair." : "Le nombre est impair.");
@@ -77,7 +78,7 @@ function pair() {
             <h3>6. Vérifier si un nombre est un multiple de 6</h3>
             <button onclick="multipleDe6()">Voir la solution</button>
             <button onclick="toggleCode('code6')">Afficher le code</button>
-            <pre id="code6" class="code-block">
+            <pre id="code6" class="code-block" style="display: none;">
 function multipleDe6() {
     let nombre = parseInt(prompt("Entrez un nombre :"));
     alert(nombre % 6 === 0 ? "Le nombre est un multiple de 6." : "Non.");
@@ -87,7 +88,7 @@ function multipleDe6() {
             <h3>7. Somme des chiffres d'un nombre</h3>
             <button onclick="sommeChiffres()">Voir la solution</button>
             <button onclick="toggleCode('code7')">Afficher le code</button>
-            <pre id="code7" class="code-block">
+            <pre id="code7" class="code-block" style="display: none;">
 function sommeChiffres() {
     let nombre = prompt("Entrez un nombre :");
     let somme = nombre.split("").reduce((acc, digit) => acc + parseInt(digit), 0);
@@ -98,7 +99,7 @@ function sommeChiffres() {
             <h3>8. Activité de Donald Trump</h3>
             <button onclick="activiteTrump()">Voir la solution</button>
             <button onclick="toggleCode('code8')">Afficher le code</button>
-            <pre id="code8" class="code-block">
+            <pre id="code8" class="code-block" style="display: none;">
 function activiteTrump() {
     alert("Donald Trump est connu pour l'immobilier et les affaires.");
 }
@@ -107,7 +108,7 @@ function activiteTrump() {
             <h3>9. Vérifier si un nombre est premier</h3>
             <button onclick="estPremier()">Voir la solution</button>
             <button onclick="toggleCode('code9')">Afficher le code</button>
-            <pre id="code9" class="code-block">
+            <pre id="code9" class="code-block" style="display: none;">
 function estPremier() {
     let nombre = parseInt(prompt("Entrez un nombre :"));
     if (nombre < 2) return alert("Ce n'est pas un nombre premier.");
@@ -121,7 +122,7 @@ function estPremier() {
             <h3>10. Somme des nombres pairs jusqu'à N</h3>
             <button onclick="sommeNombresPairs()">Voir la solution</button>
             <button onclick="toggleCode('code10')">Afficher le code</button>
-            <pre id="code10" class="code-block">
+            <pre id="code10" class="code-block" style="display: none;">
 function sommeNombresPairs() {
     let N = parseInt(prompt("Entrez un nombre :"));
     let somme = 0;
@@ -134,7 +135,7 @@ function sommeNombresPairs() {
             <p>Compléter la série : 8, 10, 13, 17, __ ?</p>
             <button onclick="serie()">Voir la solution</button>
             <button onclick="toggleCode('code11')">Afficher le code</button>
-            <pre id="code11" style="display: none;">
+            <pre id="code11" class="code-block" style="display: none;">
 function serie() {
     alert("La réponse est : 22 (car la suite suit le modèle +2, +3, +4, etc.)");
 }
@@ -144,7 +145,7 @@ function serie() {
             <p>Convertir une température en Celsius en Fahrenheit.</p>
             <button onclick="celsiusToFahrenheit()">Voir la solution</button>
             <button onclick="toggleCode('code12')">Afficher le code</button>
-            <pre id="code12" style="display: none;">
+            <pre id="code12" class="code-block" style="display: none;">
 function celsiusToFahrenheit() {
     let celsius = parseFloat(prompt("Entrez la température en Celsius :"));
     let fahrenheit = (celsius * 9/5) + 32;
@@ -156,7 +157,7 @@ function celsiusToFahrenheit() {
             <p>Calculer l'aire d'un rectangle en fonction de ses dimensions.</p>
             <button onclick="aireRectangle()">Voir la solution</button>
             <button onclick="toggleCode('code13')">Afficher le code</button>
-            <pre id="code13" style="display: none;">
+            <pre id="code13" class="code-block" style="display: none;">
 function aireRectangle() {
     let largeur = parseFloat(prompt("Entrez la largeur :"));
     let hauteur = parseFloat(prompt("Entrez la hauteur :"));
@@ -168,7 +169,7 @@ function aireRectangle() {
             <p>Déterminer si un mot est entièrement en majuscules.</p>
             <button onclick="estMajuscule()">Voir la solution</button>
             <button onclick="toggleCode('code14')">Afficher le code</button>
-            <pre id="code14" style="display: none;">
+            <pre id="code14" class="code-block" style="display: none;">
 function estMajuscule() {
     let mot = prompt("Entrez un mot :");
     alert(mot === mot.toUpperCase() ? "Le mot est en majuscules." : "Le mot n'est pas entièrement en majuscules.");
@@ -179,7 +180,7 @@ function estMajuscule() {
             <p>Déterminer si un utilisateur est majeur selon son âge.</p>
             <button onclick="estMajeur()">Voir la solution</button>
             <button onclick="toggleCode('code15')">Afficher le code</button>
-            <pre id="code15" style="display: none;">
+            <pre id="code15" class="code-block" style="display: none;">
 function estMajeur() {
     let age = parseInt(prompt("Entrez votre âge :"));
     alert(age >= 18 ? "Vous êtes majeur." : "Vous êtes mineur.");

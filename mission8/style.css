@@ -6,7 +6,12 @@ body {
     background: linear-gradient(135deg, #f3e7ff, #d6a4ff);
     color: #444;
     overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
 }
+
+
 
 /* Header */
 header {
@@ -109,6 +114,10 @@ body::before {
     z-index: -1;
     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent);
     animation: glow 8s infinite;
+}
+
+.code-block {
+    display: none;
 }
 
 @keyframes glow {
