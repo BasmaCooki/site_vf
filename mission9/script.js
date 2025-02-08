@@ -5,7 +5,7 @@ function testqcm() {
         score++;
     }
     
-    alert("Votre score est de : " + score + "/1");
+    alert("Votre score est de : " + score + "/10");
 }
 
 function ouvrirCorrige() {
