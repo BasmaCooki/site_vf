@@ -25,7 +25,14 @@ function puissance() {
 
 
 function president() {
-    alert("Ceci est une question d'opinion.");
+    let reponse = prompt("Le Président fait-il bien son travail ? (oui/non)").toLowerCase(); 
+    if (reponse === "oui") {
+        alert("C'est ton choix, même si je doute de ton jugement.");
+    } else if (reponse === "non") {
+        alert("Bon choix !");
+    } else {
+        alert("Réponse invalide. Merci de répondre par 'oui' ou 'non'.");
+    }
 }
 
 
