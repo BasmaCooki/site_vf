@@ -4,29 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Portfolio - Programmation</title>
-    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            outline: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .sticky_share_btn {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 1000;
+        }
+        .share-toggle,
+        .fixed_share ul.listing > li {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            transition: all 0.5s ease-in-out;
+            color: #fff;
+        }
+        ul.listing {
+            list-style: none;
+            display: none;
+            position: absolute;
+            bottom: 60px; /* Ajustez selon la taille de votre bouton */
+            left: 0;
+        }
+        .fixed_share ul.listing > li {
+            margin-bottom: 10px;
+        }
+        .fixed_share ul.listing > li > a {
+            display: block;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            color: inherit;
+        }
+        .share-toggle:hover,
+        .fixed_share ul.listing > li:hover {
+            transform: scale(1.1) rotate(360deg);
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 1;
+        }
+        .background-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.3;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .link-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #ff00e5;
+            text-decoration: none;
+            border: 2px solid #ff00e5;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            background-color: rgba(255, 0, 230, 0.2);
+            margin: 5px;
+        }
+        .link-button:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 0, 230, 0.4);
+            box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1em;
+            color: #ff00e5;
+            text-shadow: 0 0 5px #ff00e5;
+        }
+    </style>
 </head>
 <body>
     <section class="hero">
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <p>GUETTOUCHE BASMA</p>
-
-        <div class="links">
-            <a href="certification/certification.html">Certifications</a>
-            <a href="https://github.com/BasmaCooki/site_vf">GitHub</a>
-            <a href="https://bestinfo84.wordpress.com/">WordPress</a>
-            <a href="tp.html">Travaux Pratiques</a>
-            <a href="mission.html">Missions</a>
-            <a href="php&sql/index.html">PHP & SQL</a>
-            <a href="cv/index.html">CV / LM</a>
-            <a href="https://www.linkedin.com/in/basma-guettouche-a41531244/">Linkedin</a>
-
+        <div class="content">
+            <h2>Portfolio</h2>
+            <div class="links">
+                <a href="certification/certification.html" class="link-button">Certifications</a>
+                <a href="tp.html" class="link-button">Travaux Pratiques</a>
+                <a href="mission.html" class="link-button">Missions</a>
+                <a href="php&sql/index.html" class="link-button">PHP & SQL</a>
+                <a href="cv/index.html" class="link-button">CV / LM</a>
+            </div>
         </div>
-
+        <img src="combat.gif" alt="Arrière-plan animé" class="background-gif">
     </section>
+
+    <div class="sticky_share_btn">
+        <div class="fixed_share">
+            <ul class="listing">
+                <li class="linkedin">
+                    <a href="https://www.linkedin.com/in/basma-guettouche-a41531244/" target="_blank">
+                        <i class="fa fa-linkedin-square"></i>
+                    </a>
+                </li>
+                <li class="WordPress">
+                    <a href="https://bestinfo84.wordpress.com/" target="_blank">
+                        <i class="fa fa-globe"></i>
+                    </a>
+                </li>
+                <li class="GitHub">
+                    <a href="https://github.com/BasmaCooki/site_vf" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <span class="share-toggle">
+                <i class="fa fa-share-alt"></i>
+            </span>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 - GUETTOUCHE BASMA</p>
     </footer>
+
+    <script>
+        jQuery(".share-toggle").click(function () {
+            jQuery(".listing").fadeToggle(600);
+        });
+    </script>
 </body>
 </html>
