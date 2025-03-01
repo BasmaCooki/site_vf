@@ -3,30 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Portfolio - Programmation</title>
-    
+    <title>Bouton Néon avec Transition</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .neon-button {
+            background: none;
+            border: none;
+            color: #ff00e5;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 0 0 5px #ff00e5, 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 40px #ff00e5;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid #ff00e5;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        .transition-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .transition-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Assure que l'image couvre tout l'écran */
+        }
+    </style>
 </head>
 <body>
-    <section class="hero">
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <p>GUETTOUCHE BASMA</p>
-
-        <div class="links">
-            <a href="certification/certification.html">Certifications</a>
-            <a href="https://github.com/BasmaCooki/site_vf">GitHub</a>
-            <a href="https://bestinfo84.wordpress.com/">WordPress</a>
-            <a href="tp.html">Travaux Pratiques</a>
-            <a href="mission.html">Missions</a>
-            <a href="php&sql/index.html">PHP & SQL</a>
-            <a href="cv/index.html">CV / LM</a>
-            <a href="https://www.linkedin.com/in/basma-guettouche-a41531244/">Linkedin</a>
-
+    <div class="image-container">
+        <img src="animate.gif" alt="Image de fond">
+        <div class="button-container">
+            <a href="#" class="neon-button" id="startButton">Game Start</a>
         </div>
+    </div>
 
-    </section>
-    <footer>
-        <p>&copy; 2024 - GUETTOUCHE BASMA</p>
-    </footer>
+    <div class="transition-container" id="transitionContainer">
+        <img src="giphy.gif" alt="GIF de transition">
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('transitionContainer').style.display = 'flex';
+            setTimeout(function() {
+                window.location.href = "sommaire.html";
+            }, 2400); // 20000 millisecondes = 20 secondes
+        });
+    </script>
 </body>
 </html>
