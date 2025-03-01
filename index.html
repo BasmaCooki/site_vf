@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouton Néon avec Transition</title>
+    <title>Bouton Immersif de Jeu Vidéo</title>
     <style>
         body, html {
             margin: 0;
@@ -14,6 +14,7 @@
             justify-content: center;
             align-items: center;
             background-color: #000;
+            overflow: hidden;
         }
         .image-container {
             position: relative;
@@ -30,28 +31,49 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .neon-button {
-            background: none;
-            border: none;
+        .game-button {
+            background: rgba(255, 0, 230, 0.2);
+            border: 4px solid #ff00e5;
             color: #ff00e5;
-            font-size: 36px;
+            font-size: 48px;
             font-weight: bold;
             text-decoration: none;
-            text-shadow: 0 0 5px #ff00e5, 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 40px #ff00e5;
-            padding: 10px 20px;
+            padding: 20px 40px;
+            border-radius: 10px;
             position: relative;
             z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
         }
-        .neon-button::before {
+        .game-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px #ff00e5, 0 0 40px #ff00e5;
+        }
+        .game-button::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
             border: 2px solid #ff00e5;
-            border-radius: 10px;
+            border-radius: 8px;
             z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        .game-button:hover::before {
+            transform: scale(1.1);
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5;
+            }
+            50% {
+                box-shadow: 0 0 20px #ff00e5, 0 0 40px #ff00e5;
+            }
+            100% {
+                box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5;
+            }
         }
         .transition-container {
             display: none;
@@ -68,7 +90,7 @@
         .transition-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Assure que l'image couvre tout l'écran */
+            object-fit: cover;
         }
     </style>
 </head>
@@ -76,7 +98,7 @@
     <div class="image-container">
         <img src="animate.gif" alt="Image de fond">
         <div class="button-container">
-            <a href="#" class="neon-button" id="startButton">Game Start</a>
+            <a href="#" class="game-button" id="startButton">Game Start</a>
         </div>
     </div>
 
@@ -90,7 +112,7 @@
             document.getElementById('transitionContainer').style.display = 'flex';
             setTimeout(function() {
                 window.location.href = "sommaire.html";
-            }, 2380); // 20000 millisecondes = 20 secondes
+            }, 2380); // Durée du GIF en millisecondes
         });
     </script>
 </body>
